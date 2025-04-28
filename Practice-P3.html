@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class on element</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+        }
+        .model{
+            width: 350px;
+            height: 350px;
+            position: fixed;
+            top: -550px;
+            left: 50%;
+            box-shadow: 0px 0px 10px 2px #ccc;
+            transform: translate(-50%);
+            margin-top: 10% ;
+            transition: 0.5s;
+        }
+        .model h2{
+            font-size: 20px;
+            font-weight: normal;
+            text-align: center;
+            border-bottom:1px solid black ;
+            padding: 10px 0px;
+            position: relative;
+        }
+        .model h2 span{
+            position: absolute;
+            right: 10px;
+            font-size: 30px;
+            top: 0px;
+            cursor: pointer;
+        }
+        .showmodel{
+            top:10%
+        }
+        .b1{
+            width: 10%;
+            text-align: center;
+            font-size: 20px;
+            padding-top:2px ;
+            margin-bottom: 10px;
+            color: black;
+            background-color: white;
+        }
+        .b2{
+            width: 10%;
+            text-align: center;
+            font-size: 20px;
+            padding-top:2px ;
+            margin-bottom: 10px;
+            color: white;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="model">
+        <h2>Enquiry Now<span>&times</span></h2>
+    </div>
+    <button class="b1">Show</button><br/>
+    <button class="b2" id="BTN">Toggle</button>
+</body>
+<script>
+    let btn = document.querySelector("button")
+    let model = document.querySelector(".model")
+    let times = document.querySelector(".model h2 span")
+    let toggle = document.querySelector("#BTN")
+    btn.addEventListener("click",()=>{
+        model.classList.add("showmodel")
+    })
+    times.addEventListener("click",()=>{
+        model.classList.remove("showmodel")
+    })
+    toggle.addEventListener("click",()=>{
+        model.classList.toggle("showmodel")
+    })
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event lissner</title>
+</head>
+<body>
+    num1<input type="text" class="input" placeholder="enter the number 1"/><br/>
+    num2<input type="text" class="input" placeholder="enter the number 2"/><br/>
+    <button>Save</button><br/>
+    ADD<input type="text" class="input" placeholder="ADDITION OF TWO NUMBER"/>
+</body>
+<script>
+    let btn = document.querySelector("button");
+    let all = document.querySelectorAll(".input")
+    btn.addEventListener("click",()=>{
+        let n1 = Number(all[0].value);
+        let n2 = Number(all[1].value);
+        let output = n1 + n2;
+        all[2].value = output;
+        all[0].value = '';
+        all[1].value = '';
+    })
+</script>
+</html>
